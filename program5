@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace task_5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter N=");
+            int n = Convert.ToInt32(Console.ReadLine());
+            bool error = false;
+            for (int x =0; x < n; x++)
+            {
+                for (int y = 0; y < n; y++)
+                {
+                    for (int z = 0; z < n; z++)
+                    {
+                        if (Math.Pow(x, 3) + Math.Pow(y, 3) + Math.Pow(z, 3) == n)
+                        {
+                            Console.WriteLine(x + " " + y + " " + z);
+                            error = true;
+                        }   
+                    }
+                }
+            }
+            if (error == false)
+                Console.WriteLine("Error");
+            Console.ReadKey();
+        }
+    }
+}
