@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace task_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double pi = 0;
+            double delet = 1;
+            Console.WriteLine("Enter quanitity dividers ");
+            int dividers = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= dividers; i++)
+            {
+                pi += 1 / delet;
+                delet += 2;
+                pi -= 1 / delet;
+                delet += 2;
+            }
+            pi = pi * 4;
+            Console.WriteLine("Pi =" + pi);
+            Console.ReadKey();
+        }
