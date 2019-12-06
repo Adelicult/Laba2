@@ -1,0 +1,41 @@
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace task_4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the number of terms:");
+            int q = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enterthe angle in radians:");
+            double x = Convert.ToDouble(Console.ReadLine());
+            double cos = 1;
+            for (int i = 0, grade=2;i<q;i++, grade+=2)
+            {
+                long b = grade;
+                long f = 1;
+                for (long a = 1; a < b; b--)
+                {
+                    f *= b;
+                }
+                int n = i + 1;
+                if (n % 2 == 0)
+                {
+                    cos += Math.Pow(x, grade) / f;
+                }
+                if (n % 2 != 0)
+                {
+                    cos -= Math.Pow(x, grade) / f;
+                }
+            }
+            Console.WriteLine("cos = " + cos);
+            Console.ReadKey();
+        }
+
+    }
+}
